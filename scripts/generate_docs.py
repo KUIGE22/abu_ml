@@ -1,25 +1,21 @@
 #!/usr/bin/env python3
 """
-Notebook API Documentation Generator
+笔记本 API 文档生成器
 
-This script scans Jupyter notebooks (.ipynb) in the repository to extract
-public functions and classes, then generates a comprehensive Markdown
-documentation file at docs/API.md with signatures, docstrings (when present),
-and usage examples discovered within the notebooks.
+本脚本会扫描仓库中的 Jupyter 笔记本（.ipynb），提取公开的函数与类，
+并在 docs/API.md 生成一份完整的 Markdown 文档，包含签名、（若存在的）
+文档字符串与在笔记本中发现的用法示例。
 
-Public API rules:
-- Top-level function/class names that do not start with an underscore
+公开 API 规则：
+- 名称不以下划线开头的顶级函数/类
 
-Example extraction rules:
-- Search subsequent code cells in the same notebook for the first line that
-  appears to call the function ("name(") or instantiate the class
-  ("name(") and include that as an example snippet.
+示例提取规则：
+- 在相同笔记本的后续代码单元中，搜索第一次出现的调用（"name("）或实例化（"name("）语句，
+  将该行作为示例片段纳入文档。
 
-Limitations:
-- Notebooks are not importable modules by default. Usage examples are based
-  on code cells within the notebooks themselves. To use a function/class in
-  a reusable way, consider moving it into a .py module or executing the
-  defining cell in a notebook session.
+限制：
+- 笔记本默认不可作为可导入模块使用。示例基于笔记本中的代码单元；若需复用，
+  建议将函数/类重构到 .py 模块，或在笔记本中先执行定义单元。
 """
 
 from __future__ import annotations
@@ -238,14 +234,13 @@ def group_items_by_notebook(items: List[ApiItem]) -> Dict[Path, List[ApiItem]]:
 
 def format_markdown(grouped: Dict[Path, List[ApiItem]]) -> str:
     lines: List[str] = []
-    lines.append("# API Documentation")
+    lines.append("# API 文档")
     lines.append("")
     lines.append(
-        "This document summarizes public functions and classes discovered in the Jupyter notebooks. "
-        "Public items are top-level names that do not start with an underscore."
+        "本文档汇总了在 Jupyter 笔记本中发现的公开函数与类。公开项是名称不以下划线开头的顶级定义。"
     )
     lines.append("")
-    lines.append("Note: These APIs live in notebooks. To use them, execute the defining cell in a notebook, or refactor them into a Python module.")
+    lines.append("说明：这些 API 定义在笔记本中。要使用它们，请先在笔记本中执行定义单元，或将其重构为 Python 模块。")
     lines.append("")
 
     for notebook_path, items in sorted(grouped.items(), key=lambda kv: str(kv[0]).lower()):
@@ -253,25 +248,25 @@ def format_markdown(grouped: Dict[Path, List[ApiItem]]) -> str:
         lines.append(f"## {rel_path}")
         lines.append("")
         if not items:
-            lines.append("No public functions or classes found.")
+            lines.append("未发现公开函数或类。")
             lines.append("")
             continue
         for item in items:
             lines.append(f"### {item.name}")
             lines.append("")
-            kind_label = "Function" if item.kind == "function" else "Class"
-            lines.append(f"- Kind: {kind_label}")
-            lines.append(f"- Defined in cell: {item.cell_index}")
-            lines.append(f"- Signature: `{item.signature}`")
+            kind_label = "函数" if item.kind == "function" else "类"
+            lines.append(f"- 类型: {kind_label}")
+            lines.append(f"- 定义单元格: {item.cell_index}")
+            lines.append(f"- 签名: `{item.signature}`")
             if item.docstring:
                 lines.append("")
-                lines.append("Description:")
+                lines.append("说明:")
                 lines.append("")
                 for para_line in item.docstring.strip().splitlines():
                     lines.append(f"> {para_line}")
             if item.kind == "class" and item.methods:
                 lines.append("")
-                lines.append("Methods:")
+                lines.append("方法:")
                 lines.append("")
                 for method in item.methods:
                     lines.append(f"- `{method.signature}`")
@@ -279,7 +274,7 @@ def format_markdown(grouped: Dict[Path, List[ApiItem]]) -> str:
                         lines.append(f"  - {method.docstring.strip().splitlines()[0]}")
             if item.examples:
                 lines.append("")
-                lines.append("Example:")
+                lines.append("示例:")
                 lines.append("")
                 # Only show the first example for brevity
                 example = item.examples[0]
@@ -313,7 +308,7 @@ def main() -> int:
     markdown = format_markdown(grouped)
     output_path.write_text(markdown, encoding="utf-8")
 
-    print(f"Generated {output_path} with {len(all_items)} API item(s).")
+    print(f"已生成 {output_path}，共 {len(all_items)} 个 API 条目。")
     return 0
 
 

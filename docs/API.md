@@ -1,52 +1,52 @@
-# API Documentation
+# API 文档
 
-This document summarizes public functions and classes discovered in the Jupyter notebooks. Public items are top-level names that do not start with an underscore.
+本文档汇总了在 Jupyter 笔记本中发现的公开函数与类。公开项是名称不以下划线开头的顶级定义。
 
-Note: These APIs live in notebooks. To use them, execute the defining cell in a notebook, or refactor them into a Python module.
+说明：这些 API 定义在笔记本中。要使用它们，请先在笔记本中执行定义单元，或将其重构为 Python 模块。
 
 ## ipython/1-初识机器学习.ipynb
 
 ### cross_entropy
 
-- Kind: Function
-- Defined in cell: 22
-- Signature: `cross_entropy(y, p)`
+- 类型: 函数
+- 定义单元格: 22
+- 签名: `cross_entropy(y, p)`
 
-Description:
+说明:
 
 > 交叉熵
 
 ### score
 
-- Kind: Function
-- Defined in cell: 15
-- Signature: `score(x, w, b)`
+- 类型: 函数
+- 定义单元格: 15
+- 签名: `score(x, w, b)`
 
-Description:
+说明:
 
 > 线性函数
 
 ### sigmoid
 
-- Kind: Function
-- Defined in cell: 16
-- Signature: `sigmoid(s)`
+- 类型: 函数
+- 定义单元格: 16
+- 签名: `sigmoid(s)`
 
-Description:
+说明:
 
 > sigmoid函数
 
 ### softmax
 
-- Kind: Function
-- Defined in cell: 17
-- Signature: `softmax(s)`
+- 类型: 函数
+- 定义单元格: 17
+- 签名: `softmax(s)`
 
-Description:
+说明:
 
 > softmax函数
 
-Example:
+示例:
 
 ```python
 plt.plot(x, softmax(scores).T, linewidth=2)
@@ -54,11 +54,11 @@ plt.plot(x, softmax(scores).T, linewidth=2)
 
 ### step
 
-- Kind: Function
-- Defined in cell: 29
-- Signature: `step(x, d_yx)`
+- 类型: 函数
+- 定义单元格: 29
+- 签名: `step(x, d_yx)`
 
-Example:
+示例:
 
 ```python
     x = step(x, d_yx)
@@ -69,65 +69,65 @@ Example:
 
 ### entropy
 
-- Kind: Function
-- Defined in cell: 84
-- Signature: `entropy(P)`
+- 类型: 函数
+- 定义单元格: 84
+- 签名: `entropy(P)`
 
-Description:
+说明:
 
 > 根据每个样本出现的概率，计算信息量，输入P是数据集上每个数值统计的频率（概率）向量
 
 ### gbdt_model
 
-- Kind: Function
-- Defined in cell: 108
-- Signature: `gbdt_model(x_train, x_test, y_train, y_test)`
+- 类型: 函数
+- 定义单元格: 108
+- 签名: `gbdt_model(x_train, x_test, y_train, y_test)`
 
-Description:
+说明:
 
 > 返回训练好的GBDT模型及分数
 
 ### loss_func
 
-- Kind: Function
-- Defined in cell: 28
-- Signature: `loss_func(X, W, b, y)`
+- 类型: 函数
+- 定义单元格: 28
+- 签名: `loss_func(X, W, b, y)`
 
 ### lr_model
 
-- Kind: Function
-- Defined in cell: 108
-- Signature: `lr_model(x_train, x_test, y_train, y_test)`
+- 类型: 函数
+- 定义单元格: 108
+- 签名: `lr_model(x_train, x_test, y_train, y_test)`
 
-Description:
+说明:
 
 > 返回训练好的逻辑分类模型及分数
 
 ### mean_absolute_error
 
-- Kind: Function
-- Defined in cell: 63
-- Signature: `mean_absolute_error(y, y_pred)`
+- 类型: 函数
+- 定义单元格: 63
+- 签名: `mean_absolute_error(y, y_pred)`
 
 ### mean_squared_error
 
-- Kind: Function
-- Defined in cell: 65
-- Signature: `mean_squared_error(y, y_pred)`
+- 类型: 函数
+- 定义单元格: 65
+- 签名: `mean_squared_error(y, y_pred)`
 
 ### median_absolute_error
 
-- Kind: Function
-- Defined in cell: 64
-- Signature: `median_absolute_error(y, y_pred)`
+- 类型: 函数
+- 定义单元格: 64
+- 签名: `median_absolute_error(y, y_pred)`
 
 ### r2_score
 
-- Kind: Function
-- Defined in cell: 66
-- Signature: `r2_score(y, y_pred)`
+- 类型: 函数
+- 定义单元格: 66
+- 签名: `r2_score(y, y_pred)`
 
-Example:
+示例:
 
 ```python
 r2_score(y_test, y_pred)
@@ -135,33 +135,21 @@ r2_score(y_test, y_pred)
 
 ### rf_model
 
-- Kind: Function
-- Defined in cell: 108
-- Signature: `rf_model(x_train, x_test, y_train, y_test)`
+- 类型: 函数
+- 定义单元格: 108
+- 签名: `rf_model(x_train, x_test, y_train, y_test)`
 
-Description:
+说明:
 
 > 返回训练好的随机森林模型及分数
 
 ### set_cabin_type
 
-- Kind: Function
-- Defined in cell: 12
-- Signature: `set_cabin_type(p_df)`
+- 类型: 函数
+- 定义单元格: 12
+- 签名: `set_cabin_type(p_df)`
 
-Example:
-
-```python
-data_train_fix1 = set_cabin_type(data_train_fix1)
-```
-
-### set_cabin_type
-
-- Kind: Function
-- Defined in cell: 79
-- Signature: `set_cabin_type(p_df)`
-
-Example:
+示例:
 
 ```python
 data_train_fix1 = set_cabin_type(data_train_fix1)
@@ -169,11 +157,23 @@ data_train_fix1 = set_cabin_type(data_train_fix1)
 
 ### set_cabin_type
 
-- Kind: Function
-- Defined in cell: 86
-- Signature: `set_cabin_type(p_df)`
+- 类型: 函数
+- 定义单元格: 79
+- 签名: `set_cabin_type(p_df)`
 
-Example:
+示例:
+
+```python
+data_train_fix1 = set_cabin_type(data_train_fix1)
+```
+
+### set_cabin_type
+
+- 类型: 函数
+- 定义单元格: 86
+- 签名: `set_cabin_type(p_df)`
+
+示例:
 
 ```python
 data_train = set_cabin_type(data_train)
@@ -181,17 +181,17 @@ data_train = set_cabin_type(data_train)
 
 ### set_cabin_type
 
-- Kind: Function
-- Defined in cell: 94
-- Signature: `set_cabin_type(p_df)`
+- 类型: 函数
+- 定义单元格: 94
+- 签名: `set_cabin_type(p_df)`
 
 ### set_missing_ages
 
-- Kind: Function
-- Defined in cell: 8
-- Signature: `set_missing_ages(p_df)`
+- 类型: 函数
+- 定义单元格: 8
+- 签名: `set_missing_ages(p_df)`
 
-Example:
+示例:
 
 ```python
 data_train = set_missing_ages(data_train)
@@ -199,15 +199,15 @@ data_train = set_missing_ages(data_train)
 
 ### set_missing_ages
 
-- Kind: Function
-- Defined in cell: 77
-- Signature: `set_missing_ages(p_df)`
+- 类型: 函数
+- 定义单元格: 77
+- 签名: `set_missing_ages(p_df)`
 
-Description:
+说明:
 
 > 均值特征填充
 
-Example:
+示例:
 
 ```python
 data_train = set_missing_ages(data_train)
@@ -215,11 +215,11 @@ data_train = set_missing_ages(data_train)
 
 ### set_missing_ages
 
-- Kind: Function
-- Defined in cell: 86
-- Signature: `set_missing_ages(p_df)`
+- 类型: 函数
+- 定义单元格: 86
+- 签名: `set_missing_ages(p_df)`
 
-Example:
+示例:
 
 ```python
 data_train = set_missing_ages(data_train)
@@ -227,51 +227,51 @@ data_train = set_missing_ages(data_train)
 
 ### set_missing_ages
 
-- Kind: Function
-- Defined in cell: 94
-- Signature: `set_missing_ages(p_df)`
+- 类型: 函数
+- 定义单元格: 94
+- 签名: `set_missing_ages(p_df)`
 
 ### set_missing_ages2
 
-- Kind: Function
-- Defined in cell: 78
-- Signature: `set_missing_ages2(p_df)`
+- 类型: 函数
+- 定义单元格: 78
+- 签名: `set_missing_ages2(p_df)`
 
-Description:
+说明:
 
 > 回归模型预测特征填充
 
 ### stack_models
 
-- Kind: Function
-- Defined in cell: 108
-- Signature: `stack_models(x_train, x_test, y_train, y_test)`
+- 类型: 函数
+- 定义单元格: 108
+- 签名: `stack_models(x_train, x_test, y_train, y_test)`
 
-Description:
+说明:
 
 > 返回融合后的模型及分数
 
 ### three_kfolder
 
-- Kind: Function
-- Defined in cell: 113
-- Signature: `three_kfolder(data, n_folds=5, shuffle=True, ratios=[4, 1, 2])`
+- 类型: 函数
+- 定义单元格: 113
+- 签名: `three_kfolder(data, n_folds=5, shuffle=True, ratios=[4, 1, 2])`
 
-Description:
+说明:
 
 > 按ratios数组随机(shuffle)三分割数据集，返回：traing_set, stacking_set, testing_set
 
 ### train_val
 
-- Kind: Function
-- Defined in cell: 79
-- Signature: `train_val(data)`
+- 类型: 函数
+- 定义单元格: 79
+- 签名: `train_val(data)`
 
-Description:
+说明:
 
 > 封装所有处理训练步骤
 
-Example:
+示例:
 
 ```python
 train_val(data_train_fix1)
@@ -282,50 +282,50 @@ train_val(data_train_fix1)
 
 ### AuditoryBrain
 
-- Kind: Class
-- Defined in cell: 5
-- Signature: `AuditoryBrain`
+- 类型: 类
+- 定义单元格: 5
+- 签名: `AuditoryBrain`
 
-Description:
+说明:
 
 > 听觉皮层
 
-Methods:
+方法:
 
 - `process(self, x)`
   - 处理信号
 
 ### AuditoryBrain
 
-- Kind: Class
-- Defined in cell: 7
-- Signature: `AuditoryBrain`
+- 类型: 类
+- 定义单元格: 7
+- 签名: `AuditoryBrain`
 
-Description:
+说明:
 
 > 听觉皮层
 
-Methods:
+方法:
 
 - `process(self, x)`
   - 处理信号
 
 ### Brain
 
-- Kind: Class
-- Defined in cell: 5
-- Signature: `Brain`
+- 类型: 类
+- 定义单元格: 5
+- 签名: `Brain`
 
-Description:
+说明:
 
 > 脑皮层
 
-Methods:
+方法:
 
 - `process(self, x)`
   - 根据不同的传入信号，传递给不同的皮层组织处理
 
-Example:
+示例:
 
 ```python
 brain = Brain()
@@ -333,20 +333,20 @@ brain = Brain()
 
 ### Neuron
 
-- Kind: Class
-- Defined in cell: 3
-- Signature: `Neuron(object)`
+- 类型: 类
+- 定义单元格: 3
+- 签名: `Neuron(object)`
 
-Description:
+说明:
 
 > 神经元
 
-Methods:
+方法:
 
 - `spike(self, x)`
   - 神经元激活函数。输入某种类型的刺激信号，有可能激活神经元响应刺激
 
-Example:
+示例:
 
 ```python
         self.neurons = [Neuron('视觉信号') for i in range(num)]
@@ -354,30 +354,30 @@ Example:
 
 ### Neuron
 
-- Kind: Class
-- Defined in cell: 11
-- Signature: `Neuron(object)`
+- 类型: 类
+- 定义单元格: 11
+- 签名: `Neuron(object)`
 
-Description:
+说明:
 
 > 神经元
 
-Methods:
+方法:
 
 - `spike(self, x)`
   - 输入某种类型的刺激信号，有可能激活神经元响应刺激
 
 ### SignalInput
 
-- Kind: Class
-- Defined in cell: 3
-- Signature: `SignalInput(object)`
+- 类型: 类
+- 定义单元格: 3
+- 签名: `SignalInput(object)`
 
-Description:
+说明:
 
 > 输入信号
 
-Example:
+示例:
 
 ```python
 x_see = SignalInput('视觉信号', '一只猫在卖萌!')
@@ -385,54 +385,54 @@ x_see = SignalInput('视觉信号', '一只猫在卖萌!')
 
 ### VisualBrain
 
-- Kind: Class
-- Defined in cell: 5
-- Signature: `VisualBrain`
+- 类型: 类
+- 定义单元格: 5
+- 签名: `VisualBrain`
 
-Description:
+说明:
 
 > 视觉皮层
 
-Methods:
+方法:
 
 - `process(self, x)`
   - 处理信号
 
 ### VisualBrain
 
-- Kind: Class
-- Defined in cell: 7
-- Signature: `VisualBrain`
+- 类型: 类
+- 定义单元格: 7
+- 签名: `VisualBrain`
 
-Description:
+说明:
 
 > 视觉皮层
 
-Methods:
+方法:
 
 - `process(self, x)`
   - 处理信号
 
 ### relu
 
-- Kind: Function
-- Defined in cell: 19
-- Signature: `relu(x)`
+- 类型: 函数
+- 定义单元格: 19
+- 签名: `relu(x)`
 
 
 ## ipython/6-学习空间特征.ipynb
 
 ### compare_imgs
 
-- Kind: Function
-- Defined in cell: 16
-- Signature: `compare_imgs(imgs, titles=[])`
+- 类型: 函数
+- 定义单元格: 16
+- 签名: `compare_imgs(imgs, titles=[])`
 
-Description:
+说明:
 
 > 对比图片
 
-Example:
+示例:
 
 ```python
 compare_imgs([origin, cov], ['original', 'cov_mean'])
@@ -440,11 +440,11 @@ compare_imgs([origin, cov], ['original', 'cov_mean'])
 
 ### ensure_dir
 
-- Kind: Function
-- Defined in cell: 29
-- Signature: `ensure_dir(dir_path)`
+- 类型: 函数
+- 定义单元格: 29
+- 签名: `ensure_dir(dir_path)`
 
-Example:
+示例:
 
 ```python
 ensure_dir(target + 'weights')
@@ -452,15 +452,15 @@ ensure_dir(target + 'weights')
 
 ### show_img
 
-- Kind: Function
-- Defined in cell: 11
-- Signature: `show_img(img)`
+- 类型: 函数
+- 定义单元格: 11
+- 签名: `show_img(img)`
 
-Description:
+说明:
 
 > 展示图片
 
-Example:
+示例:
 
 ```python
 show_img(cov)
@@ -471,15 +471,15 @@ show_img(cov)
 
 ### cos_similar
 
-- Kind: Function
-- Defined in cell: 6
-- Signature: `cos_similar(v1, v2)`
+- 类型: 函数
+- 定义单元格: 6
+- 签名: `cos_similar(v1, v2)`
 
-Description:
+说明:
 
 > 用余弦向量判断相似程度
 
-Example:
+示例:
 
 ```python
 print(cos_similar(puppy_vec, dog_vec))
@@ -487,15 +487,15 @@ print(cos_similar(puppy_vec, dog_vec))
 
 ### euc_distance
 
-- Kind: Function
-- Defined in cell: 6
-- Signature: `euc_distance(v1, v2)`
+- 类型: 函数
+- 定义单元格: 6
+- 签名: `euc_distance(v1, v2)`
 
-Description:
+说明:
 
 > 用欧氏距离判断相似距离
 
-Example:
+示例:
 
 ```python
 print(euc_distance(puppy_vec, dog_vec))
@@ -503,25 +503,25 @@ print(euc_distance(puppy_vec, dog_vec))
 
 ### process_text
 
-- Kind: Function
-- Defined in cell: 3
-- Signature: `process_text(text)`
+- 类型: 函数
+- 定义单元格: 3
+- 签名: `process_text(text)`
 
-Description:
+说明:
 
 > 将标点符号替换成空格
 
 ### text2vec
 
-- Kind: Function
-- Defined in cell: 3
-- Signature: `text2vec(text)`
+- 类型: 函数
+- 定义单元格: 3
+- 签名: `text2vec(text)`
 
-Description:
+说明:
 
 > 将文本转换成向量
 
-Example:
+示例:
 
 ```python
 text2vec(text)
@@ -532,27 +532,27 @@ text2vec(text)
 
 ### set_cabin_type
 
-- Kind: Function
-- Defined in cell: 26
-- Signature: `set_cabin_type(p_df)`
+- 类型: 函数
+- 定义单元格: 26
+- 签名: `set_cabin_type(p_df)`
 
 ### set_missing_ages
 
-- Kind: Function
-- Defined in cell: 16
-- Signature: `set_missing_ages(p_df)`
+- 类型: 函数
+- 定义单元格: 16
+- 签名: `set_missing_ages(p_df)`
 
-Description:
+说明:
 
 > 均值特征填充
 
 ### set_missing_ages2
 
-- Kind: Function
-- Defined in cell: 18
-- Signature: `set_missing_ages2(p_df)`
+- 类型: 函数
+- 定义单元格: 18
+- 签名: `set_missing_ages2(p_df)`
 
-Description:
+说明:
 
 > 回归模型预测特征填充
 
@@ -561,15 +561,15 @@ Description:
 
 ### entropy
 
-- Kind: Function
-- Defined in cell: 3
-- Signature: `entropy(P)`
+- 类型: 函数
+- 定义单元格: 3
+- 签名: `entropy(P)`
 
-Description:
+说明:
 
 > 根据每个样本出现的概率，计算信息量，输入P是数据集上每个数值统计的频率（概率）向量
 
-Example:
+示例:
 
 ```python
 H = entropy(p)
