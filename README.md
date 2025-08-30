@@ -15,3 +15,7 @@
 
 ![](img/logo.jpg)
 
+## 文档
+
+- API 文档：参见 `docs/API.md`
+
